@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/css_reset.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <title>Cook Smart</title>
+    <script src="js/all_recipes.js" type="module"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="index.html">
+        <img
+          class="ml-1"
+          src="assets/logo_white.svg"
+          alt="Brand logo"
+          style="width: 125px; height: auto"
+        />
+      </a>
+      <div class="header-links">
+        <a href="home_page.html">Home Page</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="shopping_list.html">Shopping List</a>
+        <a href="profile_page.html" class="mr-1 underline">Profile</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="content-container">
+        <h1>Favorite recipes</h1>
+        <div class="card-container">
+          <div class="dynamic-recipes"></div>
+        </div>
+
+        <h1>My recipes</h1>
+        <div class="card-container">
+          <div class="dynamic-recipes"></div>
+          <div class="card upload-recipe-card">
+            <button
+              id="uploadButton"
+              class="upload-button"
+              aria-label="Upload new recipe"
+            >
+              <img
+                src="assets/plus_icon.svg"
+                alt="plus-icon"
+                class="upload-button-image"
+              />
+              <p>Create new recipe</p>
+            </button>
+          </div>
+        </div>
+
+        <div id="uploadForm" class="upload-form">
+          <div class="form-container">
+            <span class="close-button" id="closeButton">&times;</span>
+            <h2>Upload New Recipe</h2>
+            <form id="recipeForm" class="recipe-form">
+              <!-- Recipe Title -->
+              <label for="product_name">Recipe Title *</label>
+              <input
+                type="text"
+                id="product_name"
+                name="product_name"
+                maxlength="255"
+                required
+              />
+
+              <!-- Recipe Description -->
+              <label for="product_info2">Recipe Description</label>
+              <textarea
+                id="product_info2"
+                name="product_info2"
+                rows="3"
+                required
+                maxlength="255"
+              ></textarea>
+
+              <!-- Ingredients -->
+              <label for="ingredients">Ingredients *</label>
+              <textarea
+                id="ingredients"
+                name="ingredients"
+                rows="10"
+                required
+              ></textarea>
+
+              <!-- Directions -->
+              <label for="directions">Directions *</label>
+              <textarea
+                id="directions"
+                name="directions"
+                rows="5"
+                required
+              ></textarea>
+
+              <!-- Minutes to Cook -->
+              <label for="cooking_time">Minutes to Cook *</label>
+              <input
+                type="number"
+                id="cooking_time"
+                name="cooking_time"
+                min="5"
+                required
+              />
+
+              <!-- Price -->
+              <label for="recipe_price">Price *</label>
+              <div class="price-content">
+                <label>
+                  <input type="radio" name="recipe_price" value="1" required />
+                  Low($)
+                </label>
+                <label>
+                  <input type="radio" name="recipe_price" value="2" required />
+                  Medium($)
+                </label>
+                <label>
+                  <input type="radio" name="recipe_price" value="3" required />
+                  High($$$)
+                </label>
+              </div>
+
+              <input type="hidden" id="product_info3" name="product_info3" />
+              <input type="hidden" id="description" name="description" />
+
+              <!-- Recipe Image -->
+              <label for="product_photo">Recipe Image</label>
+              <input
+                type="file"
+                id="product_photo"
+                name="product_photo"
+                accept="image/*"
+              />
+              <span id="fileNameDisplay" class="image-name"
+                >No chosen image</span
+              >
+
+              <!-- Submit and Cancel Buttons -->
+              <button type="submit" class="button button-primary">
+                Upload Recipe
+              </button>
+              <div
+                id="submitResponse"
+                class="mt-3 mb-2"
+                role="alert"
+                aria-live="assertive"
+              ></div>
+              <button
+                type="button"
+                id="cancelButton"
+                class="button button-secondary"
+              >
+                Cancel
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

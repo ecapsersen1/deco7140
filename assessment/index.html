@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/css_reset.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+
+    <title>Cook Smart</title>
+    <script type="module" src="js/set_name.js" defer></script>
+    <script>
+    </script>
+  </head>
+  <body class="main-page">
+    <main>
+      <div class="content-container main-page-container">
+        <img
+          src="./assets/logo_white.svg"
+          alt="Cook Smart logo"
+          class="main-page-logo"
+        />
+        <div class="search-bar-container">
+          <form class="search-bar-form" method="get">
+            <input
+              type="text"
+              class="search-bar-input main-search-bar-input"
+              placeholder="Type in your name..."
+              aria-label="Recipe search"
+            />
+            <button type="submit" style="display: none">Submit</button>
+            <img
+              class="search-icon"
+              src="./assets/search_icon_white.svg"
+              alt="search icon"
+            />
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
